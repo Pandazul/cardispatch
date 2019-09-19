@@ -23,7 +23,7 @@ class Provider(models.Model):
     name = models.CharField('Name', max_length=50, blank=False, null=False)
     telephone1 = models.CharField('Telephone', max_length=12, blank=False, null=False)
     telephone2 = models.CharField('Mobile Phone', max_length=12, blank=False, null=False)
-    address = models.CharField('Dirección', max_length=120, blank=False, null=False)
+    address = models.CharField('Address', max_length=120, blank=False, null=False)
     zipCode = models.CharField('Zip Code', max_length=8, blank=False, null=False)
     email = models.EmailField('Email', max_length=254, unique=True)
     personType = models.ForeignKey(PersonType, on_delete=models.PROTECT, default='')
