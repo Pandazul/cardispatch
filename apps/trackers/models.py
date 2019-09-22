@@ -16,3 +16,19 @@ class CarTrackers(models.Model):
         verbose_name = 'Car Position'
         verbose_name_plural = 'Car Positions'
         ordering = ['id']
+
+
+class ProviderTrackers(models.Model):
+    id = models.AutoField('Id', primary_key=True, serialize=False)
+    provider_truck_id = models.ForeignKey('providers.ProviderTruck', on_delete=models.CASCADE, null=True)
+    lat = models.CharField('Lat', max_length=20, null=True)
+    long = models.CharField('Long', max_length=20, null=True)
+    created_at = models.DateTimeField('Created At', auto_now=True, auto_now_add=False)
+
+    def __str__(self):
+        return str(self.id)
+
+    class Meta:
+        verbose_name = 'Provider Position'
+        verbose_name_plural = 'Providers Positions'
+        ordering = ['id']
